@@ -1,5 +1,5 @@
 import React from 'react'
-import { langs, metext,frontend,backend } from './../util/aboututils';
+import { langs, metext,frontend,backend } from '../util/aboututils';
 
 interface introProps {
 

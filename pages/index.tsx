@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import  Intro  from './intro';
-import About  from './about';
-import  Footer  from './footer';
+import  Intro  from '../components/intro';
+import About  from '../components/about';
+import  Footer  from '../components/footer';
 
 
 
