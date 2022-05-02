@@ -4,11 +4,21 @@ import Link from 'next/link'
 import  Intro  from '../components/intro';
 import About  from '../components/about';
 import  Footer  from '../components/footer';
+import {motion} from 'framer-motion'
 
 
 
 const Home: NextPage = () => {
 
+  const variants = {
+    open: {
+     transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+    },
+    closed: {
+     transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+   };
+     
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -18,6 +28,7 @@ const Home: NextPage = () => {
 
       <main className="flex w-full h-[100%] flex-col bg-slate-700">
       <div className="fixed top-0  h-[60px] w-screen  flex flex-col bg-slate-700 z-10 "></div>
+
       <Intro/>
       <About/>
       <Footer/>

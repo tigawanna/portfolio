@@ -2,7 +2,7 @@ import React from 'react'
 import { projects } from './../util/aboututils';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-
+import {motion} from 'framer-motion'
 interface footerProps {
 
 }
@@ -22,13 +22,15 @@ return (
            projects.map((item,index)=>{
              return(
                <li key={index} 
-               className="text-base md:text-lg text-slate-50 shadow-lg shadow-slate-50 
-               p-4 md:w-[30%] m-[2%]">
+               className="text-base md:text-lg text-slate-50 shadow hover:shadow-lg
+                shadow-slate-50 hover:shadow-green-300 p-4 md:w-[30%] m-[2%]">
                  <Link href={item.link}>
                  <a target="_blank">
-                   <div className="text-2xl md:text-xl text-green-300 font-bold">
+                   <motion.div 
+                  whileHover={{ scale: 1.1, opacity: 1}}
+                   className="text-2xl md:text-xl text-green-300 font-bold">
                    {item.title}
-                   </div>
+                   </motion.div>
                    <div className="font-medium text-sm">
                    {item.desc}
                    </div>
