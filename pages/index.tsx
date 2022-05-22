@@ -9,7 +9,7 @@ import LoadingScreen from '../components/navigation/LoadingScreen';
 import { query, collection, orderBy } from 'firebase/firestore';
 import { db } from '../firebase/firebaseConfig';
 import { useFirestoreQueryData } from '@react-query-firebase/firestore';
-
+import Icons from '../components/Icons'
 
 
 const Home: NextPage = () => {
@@ -41,8 +41,7 @@ const Home: NextPage = () => {
 
       <main className="flex w-full h-[100%] flex-col bg-slate-700">
       <div className="fixed top-0  h-[60px] w-screen  flex flex-col bg-slate-700 z-10 "></div>
-      <Icons/>
-     <Intro/>
+      <Intro/>
       <About/>
       <Footer fb_projects={projects}/>
       </main>

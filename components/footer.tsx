@@ -13,16 +13,7 @@ link:string
 interface footerProps {
 fb_projects:Project[] | undefined
 }
-const footerVariant={
-  initial:{
-   x:100,
-   scale:1.1
-  },
-  after:{
-    x:0,
-    scale:0.9
-   },
-}
+
 const Footer: React.FC<footerProps> = ({fb_projects}) => {
 
 const projects=fb_projects&&fb_projects.length>0?fb_projects:local_projects;
@@ -42,7 +33,7 @@ return (
              return(
                <motion.li
                initial={{
-                y:300,
+                y:100,
                 opacity:0.1
               }}
                whileInView={{

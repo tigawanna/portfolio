@@ -1,4 +1,5 @@
 import React from 'react'
+import TypeAnimation from 'react-type-animation';
 
 interface introProps {
 
@@ -15,13 +16,21 @@ export const Intro: React.FC<introProps> = ({}) => {
                 Dennis Kinuthia
               </div>
               <div className="font-sarif text-3xl md:text-6xl text-slate-200 font-bold mt-[30px]">
-                African web developer and designer
+              
+       <TypeAnimation
+        cursor={true}
+        sequence={['African web developer and designer']}
+      wrapper="h1"
+      className="text-green-300"
+    />
+          
               </div>
               <div 
               className="font-sarif text-base md:text-lg 
               text-slate-200 font-semibold mt-[10px] md:w-[40%]"
           
               >
+
              I mostly focus on Javascript/typescript front-end design 
              and implementation with multiple tools 
              to fetch, organise and display the data effeciently , 

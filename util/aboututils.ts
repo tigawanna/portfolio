@@ -1,6 +1,6 @@
 export const metext=[     
     "A good user experience > fancy designs",
-    "Making my custome logic when practical > installing libraries",
+    "Making my custom logic when practical > installing libraries",
     "If it can  be done with plain css and html it should be",
     "Typescript whenever possibe" ,
     " Implement cache and reduce un necessary requests",
@@ -22,7 +22,7 @@ export const frontend=[
     'Tailwind css',
     'Chakra Ui',
     'framer-motion',
-    'React?Nextjs',
+    'React/Nextjs',
     'Flutter',
     'React-Native',
     'redux',
@@ -49,7 +49,7 @@ export const local_projects =[
 
     {
         title:"Project manager",
-        desc:"react app to help coodination , employees add project proposala ,the manager approves or rejects them , then they're moved to the funding phase then the eployees execute amd makr them done when completed",
+        desc:"react app to help cordination , employees add project proposala ,the manager approves or rejects them , then they're moved to the funding phase then the eployees execute amd makr them done when completed",
         link:"https://dev.to/tigawanna/another-react-firebase-tutorial-34d0"
     },
     {
