@@ -36,3 +36,24 @@ body{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #44ec02;
 }
+
+
+
+::-webkit-scrollbar:vertical {
+    width: 10px;
+    height: 10px;
+
+}
+
+::-webkit-scrollbar:horizontal {
+    width: 10px;
+    height: 10px;
+}
+
+.index-footer{
+    @apply flex flex-col md:flex-row h-[100%] p-[3%] md:h-20 w-full 
+    items-center justify-evenly border-t bg-slate-800
+}
+.footer-projects-li{ @apply text-base md:text-lg text-slate-50 shadow hover:shadow-lg 
+    shadow-slate-50 hover:shadow-green-300 p-4 md:w-[30%] m-[2%]
+}

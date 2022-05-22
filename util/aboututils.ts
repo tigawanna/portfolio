@@ -45,7 +45,7 @@ export const backend=[
 ]
 
 
-export const projects =[
+export const local_projects =[
 
     {
         title:"Project manager",

@@ -1,13 +1,32 @@
 import React from 'react'
-import { projects } from './../util/aboututils';
+import { local_projects } from './../util/aboututils';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import {motion} from 'framer-motion'
-interface footerProps {
+import {animate, motion} from 'framer-motion'
 
+
+export interface Project {
+title:string,
+desc:string,
+link:string
 }
+interface footerProps {
+fb_projects:Project[] | undefined
+}
+const footerVariant={
+  initial:{
+   x:100,
+   scale:1.1
+  },
+  after:{
+    x:0,
+    scale:0.9
+   },
+}
+const Footer: React.FC<footerProps> = ({fb_projects}) => {
 
-const Footer: React.FC<footerProps> = ({}) => {
+const projects=fb_projects&&fb_projects.length>0?fb_projects:local_projects;
+
 const router = useRouter();
 return (
 <div className="min-h-screen w-[100%] flex flex-col bg-slate-700 pl-4">
@@ -19,24 +38,37 @@ return (
           </div>
           <ul  className="flex flex-col md:flex-row mt-[5%] ">
          {
-           projects.map((item,index)=>{
+           projects&&projects.map((item,index)=>{
              return(
-               <li key={index} 
-               className="text-base md:text-lg text-slate-50 shadow hover:shadow-lg
-                shadow-slate-50 hover:shadow-green-300 p-4 md:w-[30%] m-[2%]">
+               <motion.li
+               initial={{
+                y:300,
+                opacity:0.1
+              }}
+               whileInView={{
+                 opacity:1,
+                 y:0,
+                 x:0
+               }} 
+               transition={{
+                 type:"spring",
+                 stiffness:30
+               }}
+          
+               key={index} 
+               className="footer-projects-li">
                  <Link href={item.link}>
                  <a target="_blank">
-                   <motion.div 
-                  whileHover={{ scale: 1.1, opacity: 1}}
-                   className="text-2xl md:text-xl text-green-300 font-bold">
+                   <div 
+                     className="text-2xl md:text-xl text-green-300 opacacity-1 font-bold overflow-hidden">
                    {item.title}
-                   </motion.div>
+                   </div>
                    <div className="font-medium text-sm">
                    {item.desc}
                    </div>
                    </a>
                    </Link>
-                </li>
+                </motion.li>
              )
            })
          }
