@@ -1,20 +1,19 @@
+import  chat from '../res/chat.webp'
+import  table from '../res/table-for-react.png'
+import  property from '../res/property.webp'
+import  project from '../res/project.webp'
+
 export const metext=[     
     "A good user experience > fancy designs",
     "Making my custom logic when practical > installing libraries",
     "If it can  be done with plain css and html it should be",
-    "Typescript whenever possibe" ,
-    " Implement cache and reduce un necessary requests",
-     "Build using mobile first styles",
+    "Typescript whenever possible" ,
+    " Cache management to optimise data usage and network requests",
+     "Mobile first design",
      "Use tailwind to simplify and streamline the styles",
       "Minimal, clean aesthetic >>>>"
     ]
-export const langs=[
-    'Javascript/Typescript',
-     'python',
-    'kotlin',
-    'dart',
-    'some C'
-]
+
 
 export const frontend=[
     'Html + CSS',
@@ -46,26 +45,52 @@ export const backend=[
 
 
 export const local_projects =[
-
     {
-        title:"Project manager",
-        desc:"react app to help cordination , employees add project proposala ,the manager approves or rejects them , then they're moved to the funding phase then the eployees execute amd makr them done when completed",
-        link:"https://dev.to/tigawanna/another-react-firebase-tutorial-34d0"
+        title:"Property Manager",
+        desc:`Built using React for the client and Firebase for auth and database
+        allows you to add your tenants ,enter  and tabulate all the payments ,
+        edit update or delete them inline, 
+        make invoices bills and print out staements for them.`,
+        tools:["react","typescript","react-query","tailwindcss","table-for-react","firebase","react-icons","dayjs"],
+        link:"https://github.com/tigawanna/project-mangaer",
+        previewlink:"https://tigawanna.github.io/project-mangaer/",
+        image:property,
     },
     {
-        title:"Edit Table",
-        desc:"plain html table component for react which allows you to create ,read, update, and delete directly from the table, i made this after havng a hard time finding a table library to use in the propert manager app that meets the crud capabilities and gives me enough control",
-        link:"https://github.com/tigawanna/edit-table"
+        title:"table-for-react",
+        desc:`NPM packege which is basically aplain html table component for react which allows you
+         to create ,read, update, and delete directly from the table, 
+         i made this after havng a hard time finding a table library to
+         use in the propert manager app that meets the crud capabilities and
+         gives me enough control in cases of validation and custom crud functions`,
+        tools:["tsdx","storybook","react","typescript","react-query","tailwindcss","react-icons","dayjs"],
+        link:"https://github.com/tigawanna/table-for-react",
+        previewlink:"https://tigawanna.github.io/table-for-react-example/",
+        image:table,
     },
     {
         title:"Chat App",
-        desc:"Built Using React for the front end and Nodejsfor the bac end with mongodb and graphql websockets ",
-        link:"https://github.com/tigawanna/chat"
-        },
-        
-    {
-        title:"Property",
-        desc:" React for the front end and firebase to shop details and map every relvenat input to the resppective CRUD used my custom react table component field in a firebase backend ",
-        link:"https://github.com/tigawanna/property"
+        desc:`Realime live chat with react and nodejs, messages are
+         broadcasted out to every client and the server doesn't persist any data`,
+        tools:["react","nodejs","socket.io","typescript","tailwindcss","react-icons","dayjs"],
+        link:"https://github.com/tigawanna/sockets-client",
+        previewlink:"https://tigawanna.github.io/sockets-client/",
+        image:chat
     },
+
+    {
+        title:"Project manager",
+        desc:`React app to help cordination , employees add 
+        project proposals ,the manager approves or rejects them ,
+         then they're moved to the funding phase then the employees 
+         execute and make them done when completed`,
+        tools:["react","typescript","react-query","tailwindcss","firebase","react-icons","dayjs"],
+        link:"https://github.com/tigawanna/projects",
+        previewlink:"https://tigawanna.github.io/oneproject",
+        image:project
+    },
+
+
+        
+
 ]

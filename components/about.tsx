@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { langs, metext,frontend,backend } from '../util/aboututils';
+import React from 'react'
+import {  metext,frontend,backend } from '../util/aboututils';
 import { motion } from 'framer-motion';
 import Icons from './Icons' 
 
@@ -21,20 +21,9 @@ interface introProps {
      <div  className="flex w-full  h-full flex-col md:flex-row justify-evenly ">  
 
       <motion.div 
-          initial={{
-          y:0,
-          x:-20,
-        opacity:0.1
-          }}
-          whileInView={{
-          opacity:1,
-          y:0,
-          x:0
-            }} 
-          transition={{
-          type:"spring",
-          stiffness:30
-            }}
+          initial={{y:0,x:0,opacity:0.1}}
+          whileInView={{ opacity:1,y:0,x:0}} 
+          transition={{type:"spring", stiffness:30}}
       className="flex-center flex-col h-full w-[95%] shadow hover:shadow-lg shadow-slate-300 
       hover:shadow-green-300 p-4 m-2 ">
         <div  className="text-3xl md:text-4xl text-slate-400 font-bold ">
@@ -47,7 +36,7 @@ interface introProps {
                <motion.li
                whileHover={{ scale: 1.1, opacity: 1}}
                key={index}
-              className="text-base md:text-lg  font-mono text-slate-50 hover:text-green-300"> {">"} {item}
+              className="text-base md:text-lg  font-mono text-slate-50 hover:text-green-300"> {"*"} {item}
                </motion.li>
              )
            })
@@ -56,40 +45,7 @@ interface introProps {
         </ul>
       </motion.div>
 
-    <motion.div 
-     initial={{
-       y:0,
-       x:-20,
-     opacity:0.1
-    }}
-     whileInView={{
-      opacity:1,
-      y:0,
-      x:0
-      }} 
-     transition={{
-      type:"spring",
-      stiffness:30
-      }}
-    
-    className="flex flex-col  w-[95%] h-full shadow hover:shadow-lg shadow-slate-300 
-     hover:shadow-green-300 p-4 m-2">
 
-       <div  className="text-3xl md:text-4xl text-slate-400 font-bold">
-          Languages
-          </div>
-          <ul className="flex flex-col mt-[5%]">
-         {
-           langs.map((item,index)=>{
-             return(
-               <li key={index}
-               className="text-sm md:text-lg text-slate-50 font-mono "> {">"} {item}</li>
-             )
-           })
-         }
-
-        </ul>
-      </motion.div>
 
 
      </div>
@@ -123,7 +79,8 @@ interface introProps {
            frontend.map((item,index)=>{
              return(
                <li key={index}
-               className="h-full text-sm md:text-lg text-slate-50 m-1 font-mono"> {">"} {item}</li>
+               className="text-sm md:text-base border border-green-500  text-slate-50 m-1 p-1 
+               font-mono rounded-sm">{item}</li>
              )
            })
          }
@@ -147,7 +104,7 @@ interface introProps {
           stiffness:30
             }}
       className="flex flex-col w-[95%] shadow hover:shadow-lg  shadow-slate-300 
-      hover:shadow-green-300 p-4 m-1">
+      hover:shadow-green-300 p-4 m-1 rounded-lg">
         <div  className="h-full text-2xl md:text-4xl text-slate-400 font-bold">
           Backend 
           </div>
@@ -156,7 +113,8 @@ interface introProps {
            backend.map((item,index)=>{
              return(
                <li key={index}
-               className="text-sm md:text-lg  text-slate-50 m-1 font-mono"> {">"} {item}</li>
+               className="text-sm md:text-base border border-green-500  text-slate-50 m-1 p-1 
+               font-mono"> {item}</li>
              )
            })
          }

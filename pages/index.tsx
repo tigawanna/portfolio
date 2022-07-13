@@ -1,23 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+// import Link from 'next/link'
 import  Intro  from '../components/intro';
 import About  from '../components/about';
-import  Footer, { Project }  from '../components/footer';
-import {motion} from 'framer-motion'
-import LoadingScreen from '../components/navigation/LoadingScreen';
-import { query, collection, orderBy } from 'firebase/firestore';
-import { db } from '../firebase/firebaseConfig';
-import { useFirestoreQueryData } from '@react-query-firebase/firestore';
-import Icons from '../components/Icons'
-
+import   Projects, { Project }  from '../components/projects';
+import { local_projects } from './../util/aboututils';
+import { motion } from 'framer-motion';
+import {FaLinkedinIn,FaGithub,FaDev} from 'react-icons/fa'
+import { IconContext } from 'react-icons/lib';
+import Link from 'next/link'
 
 const Home: NextPage = () => {
 
-  const projectRef = query( collection(db, "projects"),orderBy("rank","desc"));
-  const projectsQuery = useFirestoreQueryData(["project"], projectRef,{
-    subscribe:true
-  });
+
+
   const variants = {
     open: {
      transition: { staggerChildren: 0.07, delayChildren: 0.2 }
@@ -27,11 +23,10 @@ const Home: NextPage = () => {
     }
    };
  
-  const projects=projectsQuery?.data as Project[]
 
-  // if(projectsQuery.isLoading){
-  //  return <LoadingScreen/> 
-  // }
+  const projects=local_projects as Project[]
+
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -40,10 +35,45 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full h-[100%] flex-col bg-slate-700">
-      <div className="fixed top-0  h-[60px] w-screen  flex flex-col bg-slate-700 z-10 "></div>
-      <Intro/>
+     <Intro/>
+
+     <motion.div 
+      initial={{y:0, x:-500, opacity:0.1 }}
+      whileInView={{opacity:1,y:0,x:0}} 
+      transition={{type:"spring",stiffness:40}}
+      className="flex justify-end  w-[100%] p-1 sticky top-0 z-50 bg-slate-700">
+      <div className='p-1 m-1 flex '>
+      <IconContext.Provider
+        value={{ size: "30px",className:"mx-2" }}>
+
+          <div className='my-2 md:my-0 text-sm md:text-lg  text-slate-300 font-mono'>
+         
+          <Link href="tps://github.com/tigawanna"
+          ><a target="_blank" className="text-green-400">
+             <FaGithub />
+            </a></Link>
+          </div>
+
+          <div className='my-2 md:my-0 text-sm md:text-lg text-slate-300 font-mono'>
+          <Link href="https://linkedin.com/in/dennis-kinuthia" >
+            <a target="_blank" className="text-green-400">
+              <FaLinkedinIn />
+            </a></Link>
+          </div>
+      
+          <div className='my-2 md:my-0 text-sm md:text-lg text-slate-300 font-mono'>
+          <Link href="https://dev.to/tigawanna" >
+            <a target="_blank" className="text-green-400">
+              <FaDev />
+            </a></Link>
+          </div>
+      
+        </IconContext.Provider>
+      </div>
+      </motion.div>
+
       <About/>
-      <Footer fb_projects={projects}/>
+      <Projects fb_projects={projects}/>
       </main>
 
       <footer className="index-footer">
