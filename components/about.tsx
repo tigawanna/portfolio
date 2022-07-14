@@ -2,6 +2,7 @@ import React from 'react'
 import {  metext,frontend,backend } from '../util/aboututils';
 import { motion } from 'framer-motion';
 import Icons from './Icons' 
+import Link from 'next/link'
 
 interface introProps {
 
@@ -26,6 +27,17 @@ interface introProps {
           transition={{type:"spring", stiffness:30}}
       className="flex-center flex-col h-full w-[95%] shadow hover:shadow-lg shadow-slate-300 
       hover:shadow-green-300 p-4 m-2 ">
+      
+       <div  className="text-lg w-[90%] md:w-[70%]  flex-col-center text-white">
+        Self taught and learned most of my skills by building stuff also currently going through
+        <br/>
+         <Link href="https://www.alxafrica.com/software-engineering-" >
+          <a target="_blank" className="text-green-400">
+             ALX software program
+            </a></Link>
+           </div>
+       <br/>
+     
         <div  className="text-3xl md:text-4xl text-slate-400 font-bold ">
           Ethos
         </div>

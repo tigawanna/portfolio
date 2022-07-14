@@ -38,9 +38,9 @@ const Home: NextPage = () => {
      <Intro/>
 
      <motion.div 
-      initial={{y:0, x:-500, opacity:0.1 }}
+      initial={{y:0, x:-50, opacity:0.1 }}
       whileInView={{opacity:1,y:0,x:0}} 
-      transition={{type:"spring",stiffness:40}}
+      transition={{type:"spring",stiffness:20}}
       className="flex justify-end  w-[100%] p-1 sticky top-0 z-50 bg-slate-700">
       <div className='p-1 m-1 flex '>
       <IconContext.Provider
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
           <div className='my-2 md:my-0 text-sm md:text-lg  text-slate-300 font-mono'>
          
-          <Link href="tps://github.com/tigawanna"
+          <Link href="https://github.com/tigawanna"
           ><a target="_blank" className="text-green-400">
              <FaGithub />
             </a></Link>
