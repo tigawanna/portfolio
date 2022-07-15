@@ -86,7 +86,7 @@ export const local_projects =[
          execute and make them done when completed`,
         tools:["react","typescript","react-query","tailwindcss","firebase","react-icons","dayjs"],
         link:"https://github.com/tigawanna/projects",
-        previewlink:"https://tigawanna.github.io/oneproject",
+        previewlink:"https://tigawanna.github.io/project",
         image:project
     },
 
